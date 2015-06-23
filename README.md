@@ -1,4 +1,7 @@
-# simpletabs
+<p align="center">
+  <img src="http://i.imgur.com/VAGfHGh.png">
+</p>
+<br>
 
 It is a tabs component and it is simple.
 
