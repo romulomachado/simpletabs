@@ -6,9 +6,9 @@ $ ->
       this._element = element
 
     updateTab: (updateHash=true)->
-      $('body').scrollTop(0)
       this.updateTabLink()
       this.updateTabContainer()
+      $('body').scrollTop(0)
       if updateHash
         this.updateURLHash()
 
