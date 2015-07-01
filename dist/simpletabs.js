@@ -14,6 +14,7 @@
           }
           this.updateTabLink();
           this.updateTabContainer();
+          $('body').scrollTop(0);
           if (updateHash) {
             return this.updateURLHash();
           }
