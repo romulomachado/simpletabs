@@ -6,6 +6,7 @@ $ ->
       this._element = element
 
     updateTab: (updateHash=true)->
+      $('body').scrollTop(0)
       this.updateTabLink()
       this.updateTabContainer()
       if updateHash
