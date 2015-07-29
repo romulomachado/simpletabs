@@ -17,7 +17,10 @@ $ ->
 
     updateTabContainer: ->
       dataTab = this._element.data('tab')
-      $("[data-content='" + dataTab + "']").addClass('is-active').show().siblings().removeClass('is-active').hide()
+      contentTab = $("[data-content='" + dataTab + "']")
+      $('[data-content]').not(contentTab).removeClass('is-active')
+      contentTab.each ->
+        $(this).addClass('is-active')
 
     updateURLHash: ->
       window.location.hash = this._element.data('tab')
