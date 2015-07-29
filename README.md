@@ -16,6 +16,10 @@ bower install simpletabs
 ## Usage
 
 ```html
+<head>
+  <link rel="stylesheet" href="/path/to/simpletabs.css">
+</head>
+
 <nav>
   <ul>
     <li><a href="#tab-1" data-tab="tab-1" class="tab__link">Tab 1</a></li>
