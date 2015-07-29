@@ -4,10 +4,10 @@
     hashTabs = function() {
       return {
         _element: '',
-        element: function (element) {
+        element: function(element) {
           return this._element = element;
         },
-        updateTab: function (updateHash) {
+        updateTab: function(updateHash) {
           if (updateHash == null) {
             updateHash = true;
           }
@@ -56,7 +56,7 @@
         tabs.element($('[data-tab=\'' + hash + '\']'));
         return tabs.updateTab();
       });
-      return $('[data-tab]').on('click', function (e) {
+      return $('[data-tab]').on('click', function(e) {
         var tabs;
         tabs = new hashTabs();
         tabs.element($(this));
