@@ -32,6 +32,11 @@ bower install simpletabs
     <h1>Tab 1</h1>
     ...
   </div>
+
+  <!-- if you need to show more elements you can use the same data-content -->
+  <div class="additional__content" data-content="tab-1">
+  </div>
+
   <div class="content__item" data-content="tab-2">
     <h1>Tab 2</h1>
     ...
