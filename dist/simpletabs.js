@@ -1,7 +1,7 @@
-(function () {
-  $(function () {
+(function() {
+  $(function() {
     var hashTabs;
-    hashTabs = function () {
+    hashTabs = function() {
       return {
         _element: '',
         element: function (element) {
@@ -18,25 +18,25 @@
             return this.updateURLHash();
           }
         },
-        updateTabLink: function () {
+        updateTabLink: function() {
           return this._element.parent().addClass('is-active').siblings('.is-active').removeClass('is-active');
         },
-        updateTabContainer: function () {
+        updateTabContainer: function() {
           var content, dataTab;
           dataTab = this._element.data('tab');
           content = $('[data-content=\'' + dataTab + '\']');
           $('[data-content]').not('[data-content="' + dataTab + '"]').removeClass('is-active');
-          return content.each(function () {
+          return content.each(function() {
             return $(this).addClass('is-active');
           });
         },
-        updateURLHash: function () {
+        updateURLHash: function() {
           return window.location.hash = this._element.data('tab');
         }
       };
     };
     if ($('[data-tab]').length) {
-      $(window).on('load', function () {
+      $(window).on('load', function() {
         var hash, tabs, updateHash;
         if (window.location.hash !== '') {
           hash = window.location.hash.replace('#', '');
@@ -49,7 +49,7 @@
           return tabs.updateTab(updateHash = false);
         }
       });
-      $(window).on('hashchange', function () {
+      $(window).on('hashchange', function() {
         var hash, tabs;
         hash = window.location.hash.replace('#', '');
         tabs = new hashTabs();
