@@ -52,7 +52,7 @@ A full working example is on [CodePen](http://codepen.io/romulomachado/full/rVYV
 
 If you'd like to contribute a feature or bugfix: Thanks! To make sure your fix/feature has a high chance of being included, please read the following guidelines:
 
-1. Fork it ( https://github.com/[my-github-username]/simpletabs/fork )
+1. Fork it ( https://github.com/romulomachado/simpletabs/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
