@@ -46,7 +46,7 @@ bower install simpletabs
 <script src="/path/to/simpletabs.js"></script>
 ```
 
-A full working example is on [CodePen](http://codepen.io/romulomachado/full/rVYVqr/).
+A full working example is on [CodePen](http://codepen.io/magalhaespaulo/full/MaOqpo/).
 
 ## Contributing
 

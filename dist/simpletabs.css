@@ -5,3 +5,15 @@
 .content__item.is-active {
   display: block;
 }
+
+@media (max-width: 767px) {
+  .large__screen {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .small__screen {
+    display: none;
+  }
+}

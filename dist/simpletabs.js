@@ -32,6 +32,17 @@
         },
         updateURLHash: function() {
           return window.location.hash = this._element.data('tab');
+        },
+        responsiveTab: function() {
+          var elements, list;
+          list = this._element.parent().parent();
+          elements = $(list).find('li');
+          return elements.each(function(i) {
+            var content, dataTab;
+            dataTab = $('[data-tab]')[i].attributes['data-tab'].nodeValue;
+            content = $('[data-content=\'' + dataTab + '\']')[0];
+            return $(this).addClass('large__screen').clone().removeClass('large__screen').addClass('small__screen').insertBefore(content);
+          });
         }
       };
     };
@@ -42,10 +53,12 @@
           hash = window.location.hash.replace('#', '');
           tabs = new hashTabs();
           tabs.element($('[data-tab=\'' + hash + '\']'));
+          tabs.responsiveTab();
           return tabs.updateTab();
         } else {
           tabs = new hashTabs();
           tabs.element($('[data-tab]').first());
+          tabs.responsiveTab();
           return tabs.updateTab(updateHash = false);
         }
       });

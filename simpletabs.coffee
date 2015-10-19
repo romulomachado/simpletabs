@@ -25,16 +25,26 @@ $ ->
     updateURLHash: ->
       window.location.hash = this._element.data('tab')
 
+    responsiveTab: ->
+      list = this._element.parent().parent();
+      elements = $(list).find('li')
+      elements.each (i) ->
+        dataTab = $('[data-tab]')[i].attributes['data-tab'].nodeValue
+        content = $('[data-content=\'' + dataTab + '\']')[0]
+        $(this).addClass('large__screen').clone().removeClass('large__screen').addClass('small__screen').insertBefore(content)
+
   if $('[data-tab]').length
     $(window).on 'load', ->
       if window.location.hash != ""
         hash = window.location.hash.replace("#", "")
         tabs = new hashTabs()
         tabs.element $("[data-tab='"+hash+"']")
+        tabs.responsiveTab()
         tabs.updateTab()
       else
         tabs = new hashTabs()
         tabs.element $("[data-tab]").first()
+        tabs.responsiveTab()
         tabs.updateTab(updateHash=false)
 
     $(window).on 'hashchange', ->
