@@ -5,12 +5,10 @@ $ ->
     element: (element) ->
       this._element = element
 
-    updateTab: (updateHash=true)->
+    updateTab: ->
       this.updateTabLink()
       this.updateTabContainer()
       $('body').scrollTop(0)
-      if updateHash
-        this.updateURLHash()
 
     updateTabLink: ->
       this._element.parent().addClass('is-active').siblings('.is-active').removeClass('is-active')
@@ -35,7 +33,7 @@ $ ->
       else
         tabs = new hashTabs()
         tabs.element $("[data-tab]").first()
-        tabs.updateTab(updateHash=false)
+        tabs.updateTab()
 
     $(window).on 'hashchange', ->
       hash = window.location.hash.replace("#", "")
@@ -46,5 +44,5 @@ $ ->
     $('[data-tab]').on 'click', (e) ->
       tabs = new hashTabs()
       tabs.element $(this)
-      tabs.updateTab()
+      tabs.updateURLHash()
       e.preventDefault()

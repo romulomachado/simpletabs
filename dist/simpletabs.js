@@ -7,16 +7,10 @@
         element: function(element) {
           return this._element = element;
         },
-        updateTab: function(updateHash) {
-          if (updateHash == null) {
-            updateHash = true;
-          }
+        updateTab: function() {
           this.updateTabLink();
           this.updateTabContainer();
           $('body').scrollTop(0);
-          if (updateHash) {
-            return this.updateURLHash();
-          }
         },
         updateTabLink: function() {
           return this._element.parent().addClass('is-active').siblings('.is-active').removeClass('is-active');
@@ -37,7 +31,7 @@
     };
     if ($('[data-tab]').length) {
       $(window).on('load', function() {
-        var hash, tabs, updateHash;
+        var hash, tabs;
         if (window.location.hash !== '') {
           hash = window.location.hash.replace('#', '');
           tabs = new hashTabs();
@@ -46,7 +40,7 @@
         } else {
           tabs = new hashTabs();
           tabs.element($('[data-tab]').first());
-          return tabs.updateTab(updateHash = false);
+          return tabs.updateTab();
         }
       });
       $(window).on('hashchange', function() {
@@ -60,7 +54,7 @@
         var tabs;
         tabs = new hashTabs();
         tabs.element($(this));
-        tabs.updateTab();
+        tabs.updateURLHash();
         return e.preventDefault();
       });
     }
