@@ -10,17 +10,19 @@
         updateTab: function() {
           this.updateTabLink();
           this.updateTabContainer();
-          $('body').scrollTop(0);
+          return $('body').scrollTop(0);
         },
         updateTabLink: function() {
           return this._element.parent().addClass('is-active').siblings('.is-active').removeClass('is-active');
         },
         updateTabContainer: function() {
-          var content, dataTab;
+          var contentTab, dataTab;
           dataTab = this._element.data('tab');
-          content = $('[data-content=\'' + dataTab + '\']');
-          $('[data-content]').not('[data-content="' + dataTab + '"]').removeClass('is-active');
-          return content.each(function() {
+          contentTab = $('[data-content=\'' + dataTab + '\']');
+          if ($(this._element).attr('data-tab')) {
+            $('[data-content]').not(contentTab).removeClass('is-active');
+          }
+          return contentTab.each(function() {
             return $(this).addClass('is-active');
           });
         },
@@ -59,4 +61,5 @@
       });
     }
   });
-}.call(this));
+
+}).call(this);

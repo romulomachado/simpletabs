@@ -16,7 +16,8 @@ $ ->
     updateTabContainer: ->
       dataTab = this._element.data('tab')
       contentTab = $("[data-content='" + dataTab + "']")
-      $('[data-content]').not(contentTab).removeClass('is-active')
+      if $(@_element).attr('data-tab')
+        $('[data-content]').not(contentTab).removeClass('is-active')
       contentTab.each ->
         $(this).addClass('is-active')
 
